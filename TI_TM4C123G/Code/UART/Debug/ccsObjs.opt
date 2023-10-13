@@ -1,4 +1,5 @@
 "./main.obj"
-"./tm4c123ge6pm_startup_ccs.obj"
+"./tm4c123ge6pm_startup_ccs_SI_V1.0.obj"
+"./Q_delay/Q_delay.obj"
 "../tm4c123ge6pm.cmd"
 -llibc.a

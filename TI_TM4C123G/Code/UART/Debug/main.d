@@ -18,6 +18,7 @@ main.obj: C:/CMSIS.5.9.0/CMSIS/Core/Include/cmsis_compiler.h
 main.obj: C:/CMSIS.5.9.0/CMSIS/Core/Include/cmsis_ccs.h
 main.obj: C:/CMSIS.5.9.0/CMSIS/Core/Include/mpu_armv7.h
 main.obj: C:/CMSIS.5.9.0/Device/TI/TM4C/Include/system_TM4C123.h
+main.obj: ../Q_delay/Q_delay.h
 
 ../main.c:
 
@@ -54,4 +55,6 @@ C:/CMSIS.5.9.0/CMSIS/Core/Include/cmsis_ccs.h:
 C:/CMSIS.5.9.0/CMSIS/Core/Include/mpu_armv7.h:
 
 C:/CMSIS.5.9.0/Device/TI/TM4C/Include/system_TM4C123.h:
+
+../Q_delay/Q_delay.h:
 
