@@ -1,7 +1,8 @@
 #include "TM4C123GH6PM.h"
-#include <Q_driver/Q_delay.h>
-#include <Q_driver/Q_UART.h>
-#include <Q_driver/Q_BSP.h>
+#include "Q_BSP.h"
+#include "Q_delay.h"
+#include "Q_UART.h"
+
 
 int main(void){
  //Initialize SysTick timer
@@ -15,7 +16,7 @@ int main(void){
   while(1){
     uart0_puts(message);
     delay(1000);
-    led(RED_LED, TOGGLE);
+    led(GREEN_LED, TOGGLE);
    }
 
 

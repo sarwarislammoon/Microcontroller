@@ -18,10 +18,10 @@ main.obj: C:/CMSIS.5.9.0/CMSIS/Core/Include/cmsis_compiler.h
 main.obj: C:/CMSIS.5.9.0/CMSIS/Core/Include/cmsis_ccs.h
 main.obj: C:/CMSIS.5.9.0/CMSIS/Core/Include/mpu_armv7.h
 main.obj: C:/CMSIS.5.9.0/Device/TI/TM4C/Include/system_TM4C123.h
-main.obj: C:/Users/sislam/WORK/Microcontroller/TI_TM4C123G/Code/UART/Q_driver/Q_delay.h
-main.obj: C:/Users/sislam/WORK/Microcontroller/TI_TM4C123G/Code/UART/Q_driver/Q_UART.h
-main.obj: C:/Users/sislam/WORK/Microcontroller/TI_TM4C123G/Code/UART/Q_driver/Q_common.h
-main.obj: C:/Users/sislam/WORK/Microcontroller/TI_TM4C123G/Code/UART/Q_driver/Q_BSP.h
+main.obj: C:/Users/sislam/WORK/Microcontroller/TI_TM4C123G/Code/Q_driver/Q_BSP.h
+main.obj: C:/Users/sislam/WORK/Microcontroller/TI_TM4C123G/Code/Q_driver/Q_common.h
+main.obj: C:/Users/sislam/WORK/Microcontroller/TI_TM4C123G/Code/Q_driver/Q_delay.h
+main.obj: C:/Users/sislam/WORK/Microcontroller/TI_TM4C123G/Code/Q_driver/Q_UART.h
 
 ../main.c:
 
@@ -59,11 +59,11 @@ C:/CMSIS.5.9.0/CMSIS/Core/Include/mpu_armv7.h:
 
 C:/CMSIS.5.9.0/Device/TI/TM4C/Include/system_TM4C123.h:
 
-C:/Users/sislam/WORK/Microcontroller/TI_TM4C123G/Code/UART/Q_driver/Q_delay.h:
+C:/Users/sislam/WORK/Microcontroller/TI_TM4C123G/Code/Q_driver/Q_BSP.h:
 
-C:/Users/sislam/WORK/Microcontroller/TI_TM4C123G/Code/UART/Q_driver/Q_UART.h:
+C:/Users/sislam/WORK/Microcontroller/TI_TM4C123G/Code/Q_driver/Q_common.h:
 
-C:/Users/sislam/WORK/Microcontroller/TI_TM4C123G/Code/UART/Q_driver/Q_common.h:
+C:/Users/sislam/WORK/Microcontroller/TI_TM4C123G/Code/Q_driver/Q_delay.h:
 
-C:/Users/sislam/WORK/Microcontroller/TI_TM4C123G/Code/UART/Q_driver/Q_BSP.h:
+C:/Users/sislam/WORK/Microcontroller/TI_TM4C123G/Code/Q_driver/Q_UART.h:
 

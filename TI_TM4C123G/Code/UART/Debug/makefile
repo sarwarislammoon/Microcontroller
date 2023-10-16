@@ -12,11 +12,9 @@ GEN_CMDS__FLAG :=
 ORDERED_OBJS += \
 "./main.obj" \
 "./tm4c123ge6pm_startup_ccs_SI_V1.0.obj" \
-"./Q_driver/Q_BSP.obj" \
-"./Q_driver/Q_UART.obj" \
-"./Q_driver/Q_delay.obj" \
 "../tm4c123ge6pm.cmd" \
 $(GEN_CMDS__FLAG) \
+-l"C:/Users/sislam/WORK/Microcontroller/TI_TM4C123G/Code/Q_driver/Debug/Q_driver.lib" \
 -llibc.a \
 
 -include ../makefile.init
@@ -27,9 +25,7 @@ RMDIR := RMDIR /S/Q
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include subdir_vars.mk
--include Q_driver/subdir_vars.mk
 -include subdir_rules.mk
--include Q_driver/subdir_rules.mk
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)
@@ -140,15 +136,15 @@ all: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 UART.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 	@echo 'Building target: "$@"'
 	@echo 'Invoking: Arm Linker'
-	"C:/ti/ccs1250/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=__FPU_PRESENT --define=PART_TM4C123GE6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"UART.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1250/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1250/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="UART_linkInfo.xml" --rom_model -o "UART.out" $(ORDERED_OBJS)
+	"C:/ti/ccs1250/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=__FPU_PRESENT --define=PART_TM4C123GE6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"UART.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1250/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/Users/sislam/WORK/Microcontroller/TI_TM4C123G/Code/Q_driver" -i"C:/ti/ccs1250/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="UART_linkInfo.xml" --rom_model -o "UART.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: "$@"'
 	@echo ' '
 
 # Other Targets
 clean:
 	-$(RM) $(EXE_OUTPUTS__QUOTED)
-	-$(RM) "main.obj" "tm4c123ge6pm_startup_ccs_SI_V1.0.obj" "Q_driver\Q_BSP.obj" "Q_driver\Q_UART.obj" "Q_driver\Q_delay.obj" 
-	-$(RM) "main.d" "tm4c123ge6pm_startup_ccs_SI_V1.0.d" "Q_driver\Q_BSP.d" "Q_driver\Q_UART.d" "Q_driver\Q_delay.d" 
+	-$(RM) "main.obj" "tm4c123ge6pm_startup_ccs_SI_V1.0.obj" 
+	-$(RM) "main.d" "tm4c123ge6pm_startup_ccs_SI_V1.0.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

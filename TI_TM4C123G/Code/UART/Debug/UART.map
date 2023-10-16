@@ -1,7 +1,7 @@
 ******************************************************************************
                   TI ARM Linker PC v20.2.7                     
 ******************************************************************************
->> Linked Mon Oct 16 16:02:16 2023
+>> Linked Mon Oct 16 17:32:42 2023
 
 OUTPUT FILE NAME:   <UART.out>
 ENTRY POINT SYMBOL: "_c_int00_noargs"  address: 0000061d
@@ -38,11 +38,11 @@ section   page    origin      length       input sections
                   00000000    0000026c     tm4c123ge6pm_startup_ccs_SI_V1.0.obj (.intvecs)
 
 .text      0    0000026c    00000406     
-                  0000026c    00000110     Q_BSP.obj (.text)
-                  0000037c    000000d0     Q_UART.obj (.text)
+                  0000026c    00000110     Q_driver.lib : Q_BSP.obj (.text)
+                  0000037c    000000d0                  : Q_UART.obj (.text)
                   0000044c    0000009c     rtsv7M4_T_le_v4SPD16_eabi.lib : memcpy_t2.asm.obj (.text)
                   000004e8    00000068                                   : copy_decompress_lzss.c.obj (.text:decompress:lzss:__TI_decompress_lzss)
-                  00000550    0000004c     Q_delay.obj (.text)
+                  00000550    0000004c     Q_driver.lib : Q_delay.obj (.text)
                   0000059c    00000044     rtsv7M4_T_le_v4SPD16_eabi.lib : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit:__TI_auto_init_nobinit_nopinit)
                   000005e0    0000003c     main.obj (.text)
                   0000061c    00000034     rtsv7M4_T_le_v4SPD16_eabi.lib : boot_cortex_m.c.obj (.text:_c_int00_noargs:_c_int00_noargs)
@@ -64,7 +64,7 @@ section   page    origin      length       input sections
 *          0    00000000    00000000     UNINITIALIZED
 
 .data      0    20000200    00000004     UNINITIALIZED
-                  20000200    00000004     Q_delay.obj (.data)
+                  20000200    00000004     Q_driver.lib : Q_delay.obj (.data)
 
 .stack     0    20000000    00000200     UNINITIALIZED
                   20000000    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : boot_cortex_m.c.obj (.stack)
@@ -83,7 +83,7 @@ MODULE SUMMARY
     +--+--------------------------------------+------+---------+---------+
        Total:                                 72     649       0      
                                                                       
-    .\Q_driver\
+    C:/Users/sislam/WORK/Microcontroller/TI_TM4C123G/Code/Q_driver/Debug/Q_driver.lib
        Q_BSP.obj                              272    0         0      
        Q_UART.obj                             208    0         0      
        Q_delay.obj                            76     0         4      
