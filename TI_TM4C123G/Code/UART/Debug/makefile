@@ -12,7 +12,9 @@ GEN_CMDS__FLAG :=
 ORDERED_OBJS += \
 "./main.obj" \
 "./tm4c123ge6pm_startup_ccs_SI_V1.0.obj" \
-"./Q_delay/Q_delay.obj" \
+"./Q_driver/Q_BSP.obj" \
+"./Q_driver/Q_UART.obj" \
+"./Q_driver/Q_delay.obj" \
 "../tm4c123ge6pm.cmd" \
 $(GEN_CMDS__FLAG) \
 -llibc.a \
@@ -25,9 +27,9 @@ RMDIR := RMDIR /S/Q
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include subdir_vars.mk
--include Q_delay/subdir_vars.mk
+-include Q_driver/subdir_vars.mk
 -include subdir_rules.mk
--include Q_delay/subdir_rules.mk
+-include Q_driver/subdir_rules.mk
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)
@@ -145,8 +147,8 @@ UART.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 # Other Targets
 clean:
 	-$(RM) $(EXE_OUTPUTS__QUOTED)
-	-$(RM) "main.obj" "tm4c123ge6pm_startup_ccs_SI_V1.0.obj" "Q_delay\Q_delay.obj" 
-	-$(RM) "main.d" "tm4c123ge6pm_startup_ccs_SI_V1.0.d" "Q_delay\Q_delay.d" 
+	-$(RM) "main.obj" "tm4c123ge6pm_startup_ccs_SI_V1.0.obj" "Q_driver\Q_BSP.obj" "Q_driver\Q_UART.obj" "Q_driver\Q_delay.obj" 
+	-$(RM) "main.d" "tm4c123ge6pm_startup_ccs_SI_V1.0.d" "Q_driver\Q_BSP.d" "Q_driver\Q_UART.d" "Q_driver\Q_delay.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 
