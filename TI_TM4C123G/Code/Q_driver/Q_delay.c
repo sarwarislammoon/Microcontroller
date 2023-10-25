@@ -13,7 +13,7 @@ void delay(uint32_t ms){
 
 
 void SysTick_Init(void){
-    SysTick->CTRL = 0b00000011;     // Enable SysTick timer, SysTick interrupt and use internal clock/4 = 4MHz as its frequency.
+    SysTick->CTRL = 0b00000011;     // Enable SysTick timer, SysTick interrupt and use Precision internal oscillator (PIOSC) divided by 4
     SysTick->LOAD = 1000U*4 - 1;    // 1000uSeconds delay
 }
 
