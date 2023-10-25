@@ -1,4 +1,5 @@
 "./main.obj"
-"./tm4c123ge6pm_startup_ccs.obj"
+"./tm4c123ge6pm_startup_ccs_SI_V1.0.obj"
 "../tm4c123ge6pm.cmd"
 -llibc.a
+-l"C:/Users/sislam/WORK/Microcontroller/TI_TM4C123G/Code/Q_driver/Debug/Q_driver.lib"

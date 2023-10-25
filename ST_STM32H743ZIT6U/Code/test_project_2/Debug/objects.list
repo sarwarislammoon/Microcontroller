@@ -1,0 +1,6 @@
+"./Src/Q_BSP.o"
+"./Src/Q_delay.o"
+"./Src/main.o"
+"./Src/syscalls.o"
+"./Src/sysmem.o"
+"./Startup/startup_stm32h743zitx.o"

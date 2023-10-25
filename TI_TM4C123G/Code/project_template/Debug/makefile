@@ -4,17 +4,18 @@
 
 SHELL = cmd.exe
 
-CG_TOOL_ROOT := C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS
+CG_TOOL_ROOT := C:/ti/ccs1250/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS
 
 GEN_OPTS__FLAG := 
 GEN_CMDS__FLAG := 
 
 ORDERED_OBJS += \
 "./main.obj" \
-"./tm4c123ge6pm_startup_ccs.obj" \
+"./tm4c123ge6pm_startup_ccs_SI_V1.0.obj" \
 "../tm4c123ge6pm.cmd" \
 $(GEN_CMDS__FLAG) \
 -llibc.a \
+-l"C:/Users/sislam/WORK/Microcontroller/TI_TM4C123G/Code/Q_driver/Debug/Q_driver.lib" \
 
 -include ../makefile.init
 
@@ -121,29 +122,29 @@ endif
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXE_OUTPUTS += \
-project_template.out \
+project_template_new.out \
 
 EXE_OUTPUTS__QUOTED += \
-"project_template.out" \
+"project_template_new.out" \
 
 
 # All Target
 all: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
-	@$(MAKE) --no-print-directory -Onone "project_template.out"
+	@$(MAKE) --no-print-directory -Onone "project_template_new.out"
 
 # Tool invocations
-project_template.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
+project_template_new.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 	@echo 'Building target: "$@"'
 	@echo 'Invoking: Arm Linker'
-	"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=__FPU_PRESENT --define=PART_TM4C123GE6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"project_template.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="project_template_linkInfo.xml" --rom_model -o "project_template.out" $(ORDERED_OBJS)
+	"C:/ti/ccs1250/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=__FPU_PRESENT --define=PART_TM4C123GE6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"project_template_new.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1250/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1250/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="project_template_new_linkInfo.xml" --rom_model -o "project_template_new.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: "$@"'
 	@echo ' '
 
 # Other Targets
 clean:
 	-$(RM) $(EXE_OUTPUTS__QUOTED)
-	-$(RM) "main.obj" "tm4c123ge6pm_startup_ccs.obj" 
-	-$(RM) "main.d" "tm4c123ge6pm_startup_ccs.d" 
+	-$(RM) "main.obj" "tm4c123ge6pm_startup_ccs_SI_V1.0.obj" 
+	-$(RM) "main.d" "tm4c123ge6pm_startup_ccs_SI_V1.0.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

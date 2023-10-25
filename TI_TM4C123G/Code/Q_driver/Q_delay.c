@@ -1,6 +1,5 @@
 #include <Q_delay.h>
 
-
 //Global variables
 uint32_t _ms_counter = 0U;
 
@@ -13,9 +12,11 @@ void delay(uint32_t ms){
 
 
 void SysTick_Init(void){
-    SysTick->CTRL = 0b00000011;     // Enable SysTick timer, SysTick interrupt and use Precision internal oscillator (PIOSC) divided by 4
-    SysTick->LOAD = 1000U*4 - 1;    // 1000uSeconds delay
+    SysTick->CTRL = 0b00000111;     // Enable SysTick timer, SysTick interrupt and use CPU clock.
+    SysTick->LOAD = (DELAY_IN_MICRO_SECONDS * CLOCK_FREQUENCY_IN_MHZ) - 1;
+
 }
+
 
 
 void SysTick_Handler(void) {
