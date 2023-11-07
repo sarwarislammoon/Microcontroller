@@ -27,8 +27,7 @@ int main(void){
 				last_led=GREEN_LED;
 			}
 
-		}
-	}
+			}}
 
 }
 
