@@ -37,13 +37,15 @@ int main(void){
 
 
 
-   *(uint32_t *)(&UDMA_CONTROL_TABLE[0x1E0]) = (uint32_t)src_buff;    // Program the source end pointer at offset 0x1E0 to the address of the source buffer + 0x3FC.
-   *(uint32_t *)(&UDMA_CONTROL_TABLE[0x1E4]) = (uint32_t)dest_buff;   // Program the destination end pointer at offset 0x1E4 to the address of the destination buffer + 0x3FC.
+   *(uint32_t *)(&UDMA_CONTROL_TABLE[0x1E0]) = (uint32_t)src_buff+(BUFFER_SIZE-1);    // Program the source end pointer at offset 0x1E0 to the address of the source buffer + buffer_size.
+   *(uint32_t *)(&UDMA_CONTROL_TABLE[0x1E4]) = (uint32_t)dest_buff+(BUFFER_SIZE-1);   // Program the destination end pointer at offset 0x1E4 to the address of the destination buffer + buffer_size.
 
-   //The control word at offset 0x1E8 must be programmed according to Table 9-8.
+   //data size (source and dest) 8 bit, address increment byte for both source and dest and set auto transfer
 
-    UDMA_CTRL_WORD |= 2<<30 | 2<<28 | 2<<26 | 2<<24 | 3<<14 | (BUFFER_SIZE-1) <<4 |  02 <<0;
-   // UDMA_CTRL_WORD = 2;
+    //UDMA_CTRL_WORD |= 2<<30 | 2<<28 | 2<<26 | 2<<24 | 3<<14 | (BUFFER_SIZE-1) <<4 |  02 <<0;
+    //UDMA_CTRL_WORD |=  3<<14 | (BUFFER_SIZE-1) <<4 |  02 <<0;
+    UDMA_CTRL_WORD |= 2<<30  | 2<<26 |   3<<14 | (BUFFER_SIZE-1) <<4 |  02 <<0;
+
    *(uint32_t *)(&UDMA_CONTROL_TABLE[0x1E8]) = UDMA_CTRL_WORD;
 
 
@@ -51,6 +53,9 @@ int main(void){
    //Start the Transfer
    UDMA->ENASET |=BIT30;                //Enable the channel by setting bit 30 of the DMA Channel Enable Set (DMAENASET) register
    UDMA->SWREQ |=BIT30;                 //Issue a transfer request by setting bit 30 of the DMA Channel Software Request (DMASWREQ) register.
+
+
+
 
    while(1){
 
